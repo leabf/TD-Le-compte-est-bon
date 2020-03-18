@@ -1,4 +1,4 @@
-package application;
+package modele;
 
 import java.io.Serializable;
 import java.text.DateFormat;
@@ -23,14 +23,6 @@ public class Score implements Comparable<Score>, Serializable {
 	}
 	public String getsDate() {
 		return sDate;
-	}
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-	public static void main(String[] args) {
-		Score scoreTest = new Score("Marcel", 3, 65);
-		scoreTest.affiche();
-
 	}
 	
 	private String sPseudo;

@@ -24,8 +24,8 @@
                   <Button fx:id="jouer" layoutX="184.0" layoutY="1.0" mnemonicParsing="false" text="Jouer" />
                   <Label fx:id="pseudo" layoutX="74.0" layoutY="6.0" text="Pseudo" />
                   <Button fx:id="score" layoutX="252.0" layoutY="1.0" mnemonicParsing="false" text="Score" />
-                  <Text layoutX="6.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pseudo :" />
-                  <Text layoutX="400.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Heure" />
+                  <Text layoutX="14.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pseudo :" />
+                  <Text fx:id="heure" layoutX="400.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Heure" />
                </children>
             </AnchorPane>
          </items>
@@ -97,18 +97,18 @@
                         </Button>
                      </children>
                   </HBox>
-                  <Button layoutX="151.0" layoutY="114.0" mnemonicParsing="false" text="Annuler" />
-                  <Button layoutX="231.0" layoutY="114.0" mnemonicParsing="false" text="Valider" />
-                  <TextArea layoutX="20.0" layoutY="156.0" prefHeight="200.0" prefWidth="195.0" />
-                  <Button layoutX="76.0" layoutY="363.0" mnemonicParsing="false" text="Supprimer" />
-                  <Text layoutX="37.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calcul demandé" />
-                  <Text layoutX="259.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="264">
+                  <Button fx:id="annuler" layoutX="151.0" layoutY="114.0" mnemonicParsing="false" text="Annuler" />
+                  <Button fx:id="valider" layoutX="231.0" layoutY="114.0" mnemonicParsing="false" text="Valider" />
+                  <TextArea fx:id="historiqueCalculs" layoutX="20.0" layoutY="156.0" prefHeight="200.0" prefWidth="195.0" />
+                  <Button fx:id="supprimer" layoutX="76.0" layoutY="363.0" mnemonicParsing="false" text="Supprimer" />
+                  <Text fx:id="calcul" layoutX="37.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calcul demandé" />
+                  <Text fx:id="nombreATrouver" layoutX="259.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="264">
                      <font>
                         <Font size="29.0" />
                      </font>
                   </Text>
                   <Text layoutX="240.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre à trouver" />
-                  <Button layoutX="251.0" layoutY="277.0" mnemonicParsing="false" text="Proposer" />
+                  <Button fx:id="proposer" layoutX="251.0" layoutY="277.0" mnemonicParsing="false" text="Proposer" />
                </children>
             </AnchorPane>
          </items>
@@ -126,7 +126,7 @@
             <Insets left="30.0" right="30.0" />
          </padding>
          <items>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Chrono" />
+            <Text fx:id="chrono" strokeType="OUTSIDE" strokeWidth="0.0" text="Chrono" />
          </items>
       </SplitPane>
    </right>

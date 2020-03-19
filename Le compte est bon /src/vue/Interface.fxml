@@ -3,183 +3,131 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="application.Controller">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="450.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="application.Controller">
    <top>
-      <GridPane prefHeight="17.0" prefWidth="451.0" BorderPane.alignment="CENTER">
-         <columnConstraints>
-            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="98.0" minWidth="10.0" prefWidth="88.0" />
-            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="110.5" minWidth="10.0" prefWidth="85.5" />
-            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="116.0" minWidth="10.0" prefWidth="76.0" />
-            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-         </columnConstraints>
-         <rowConstraints>
-            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-         </rowConstraints>
-         <children>
-            <Label fx:id="pseudo" text="Pseudo" GridPane.columnIndex="1" />
-            <Button fx:id="jouer" mnemonicParsing="false" text="Jouer" GridPane.columnIndex="2" />
-            <Button fx:id="score" mnemonicParsing="false" text="Score" GridPane.columnIndex="3" />
-            <Label alignment="CENTER" contentDisplay="RIGHT" disable="true" layoutX="99.0" layoutY="10.0" text="Pseudo :" textAlignment="RIGHT" />
-            <Label fx:id="heure" text="Heure" textFill="#a8a8a8" GridPane.columnIndex="4">
-               <padding>
-                  <Insets right="15.0" />
-               </padding>
-            </Label>
-         </children>
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
+      <SplitPane BorderPane.alignment="CENTER">
          <BorderPane.margin>
-            <Insets bottom="15.0" top="15.0" />
+            <Insets />
          </BorderPane.margin>
-      </GridPane>
+         <items>
+            <AnchorPane>
+               <children>
+                  <Button fx:id="jouer" layoutX="184.0" layoutY="1.0" mnemonicParsing="false" text="Jouer" />
+                  <Label fx:id="pseudo" layoutX="74.0" layoutY="6.0" text="Pseudo" />
+                  <Button fx:id="score" layoutX="252.0" layoutY="1.0" mnemonicParsing="false" text="Score" />
+                  <Text layoutX="6.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pseudo :" />
+                  <Text layoutX="400.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Heure" />
+               </children>
+            </AnchorPane>
+         </items>
+         <padding>
+            <Insets bottom="15.0" top="15.0" />
+         </padding>
+      </SplitPane>
    </top>
    <center>
-      <GridPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="265.0" BorderPane.alignment="CENTER">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="500.0" minWidth="10.0" prefWidth="189.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="96.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="209.0" minHeight="10.0" prefHeight="209.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <GridPane alignment="CENTER" prefHeight="63.0" prefWidth="451.0">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="158.0" minWidth="10.0" prefWidth="90.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="86.0" minWidth="5.0" prefWidth="39.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="90.0" minWidth="10.0" prefWidth="35.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="119.0" minWidth="10.0" prefWidth="35.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="174.0" minWidth="10.0" prefWidth="122.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints maxHeight="3.0" minHeight="3.0" prefHeight="3.0" />
-                  <RowConstraints maxHeight="53.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
-              </rowConstraints>
+      <SplitPane BorderPane.alignment="CENTER">
+         <items>
+            <AnchorPane>
                <children>
-                  <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="28.0" text="+" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="26.0" text="-" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <Button mnemonicParsing="false" text="X" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                  <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" text="/" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-                  <Separator prefHeight="0.0" prefWidth="215.0" GridPane.columnSpan="2147483647" />
-               </children>
-            </GridPane>
-            <GridPane GridPane.rowIndex="1">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="99.0" minWidth="10.0" prefWidth="57.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="94.0" minWidth="10.0" prefWidth="47.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="130.0" minWidth="10.0" prefWidth="53.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="83.0" minWidth="10.0" prefWidth="49.0" />
-                  <ColumnConstraints halignment="LEFT" maxWidth="78.0" minWidth="10.0" prefWidth="62.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="70.0" minWidth="10.0" prefWidth="53.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="103.0" minWidth="10.0" prefWidth="69.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <Button mnemonicParsing="false" text="9" GridPane.columnIndex="1" />
-                  <Button mnemonicParsing="false" text="25" GridPane.columnIndex="2" />
-                  <Button mnemonicParsing="false" text="4" GridPane.columnIndex="3" />
-                  <Button mnemonicParsing="false" text="3" GridPane.columnIndex="5" />
-                  <Button mnemonicParsing="false" text="2" GridPane.columnIndex="6" />
-                  <Button mnemonicParsing="false" prefHeight="0.0" prefWidth="40.0" text="100" GridPane.columnIndex="4" />
-               </children>
-            </GridPane>
-            <GridPane GridPane.rowIndex="2">
-              <columnConstraints>
-                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <Label disable="true" text="Calcul demandé" textAlignment="CENTER">
-                     <GridPane.margin>
-                        <Insets left="20.0" />
-                     </GridPane.margin>
-                  </Label>
-                  <Button mnemonicParsing="false" text="Annuler" GridPane.columnIndex="1" />
-                  <Button mnemonicParsing="false" text="Valider" GridPane.columnIndex="2" />
-               </children>
-            </GridPane>
-            <GridPane GridPane.rowIndex="3">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="150.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <TextArea prefHeight="200.0" prefWidth="200.0">
-                     <GridPane.margin>
-                        <Insets bottom="30.0" left="10.0" />
-                     </GridPane.margin>
-                  </TextArea>
-                  <Button mnemonicParsing="false" text="Supprimer">
-                     <GridPane.margin>
-                        <Insets left="58.0" top="180.0" />
-                     </GridPane.margin>
-                  </Button>
-                  <GridPane alignment="BOTTOM_CENTER" GridPane.columnIndex="1">
-                    <columnConstraints>
-                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="BOTTOM" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="SOMETIMES" />
-                    </rowConstraints>
+                  <HBox layoutX="104.0" layoutY="14.0">
                      <children>
-                        <Label alignment="CENTER" contentDisplay="CENTER" text="365" textAlignment="CENTER">
-                           <font>
-                              <Font size="33.0" />
-                           </font>
-                        </Label>
-                        <Label text="Nombre à trouver" GridPane.rowIndex="1" />
-                        <Button mnemonicParsing="false" text="Proposer" GridPane.rowIndex="2" />
+                        <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="28.0" text="+">
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="26.0" text="-">
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" text="X">
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" text="/">
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </Button>
                      </children>
-                  </GridPane>
+                  </HBox>
+                  <HBox layoutX="65.0" layoutY="51.0">
+                     <children>
+                        <Button mnemonicParsing="false" text="9">
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" text="25">
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" text="4">
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" text="3">
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" text="2">
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="0.0" prefWidth="40.0" text="100">
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Button layoutX="151.0" layoutY="114.0" mnemonicParsing="false" text="Annuler" />
+                  <Button layoutX="231.0" layoutY="114.0" mnemonicParsing="false" text="Valider" />
+                  <TextArea layoutX="20.0" layoutY="156.0" prefHeight="200.0" prefWidth="195.0" />
+                  <Button layoutX="76.0" layoutY="363.0" mnemonicParsing="false" text="Supprimer" />
+                  <Text layoutX="37.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calcul demandé" />
+                  <Text layoutX="259.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="264">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="240.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre à trouver" />
+                  <Button layoutX="251.0" layoutY="277.0" mnemonicParsing="false" text="Proposer" />
                </children>
-            </GridPane>
-         </children>
-      </GridPane>
+            </AnchorPane>
+         </items>
+      </SplitPane>
    </center>
    <opaqueInsets>
       <Insets />
    </opaqueInsets>
    <right>
-      <GridPane BorderPane.alignment="CENTER">
-         <columnConstraints>
-            <ColumnConstraints />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-         </columnConstraints>
-         <rowConstraints>
-            <RowConstraints />
-            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-         </rowConstraints>
-         <children>
-            <Label text="Chrono" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-         </children>
+      <SplitPane BorderPane.alignment="CENTER">
          <BorderPane.margin>
-            <Insets left="30.0" right="30.0" />
+            <Insets />
          </BorderPane.margin>
-      </GridPane>
+         <padding>
+            <Insets left="30.0" right="30.0" />
+         </padding>
+         <items>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Chrono" />
+         </items>
+      </SplitPane>
    </right>
 </BorderPane>

@@ -91,23 +91,23 @@ public class Etape {
 	public void calculer() {
 		switch (idOperation) {
 		case 1:
-			resultat = id1 + id2;
+			resultat = tabPlaques.get(id1) + tabPlaques.get(id2);
 			calculOK = true;
 			break;
 			
 		case 2:
-			resultat = id1 - id2;
+			resultat = tabPlaques.get(id1) - tabPlaques.get(id2);
 			calculOK = this.resultat > 0 ? true : false;
 			break;
 			
 		case 3:
-			resultat = id1 * id2;
+			resultat = tabPlaques.get(id1) * tabPlaques.get(id2);
 			calculOK = true;
 			break;
 			
 		case 4:
-			resultat = id1 / id2;
-			calculOK = id1 % id2 == 0 ? true : false;
+			resultat = tabPlaques.get(id1) / tabPlaques.get(id2);
+			calculOK = tabPlaques.get(id1) % tabPlaques.get(id2) == 0 ? true : false;
 			break;
 
 		default:

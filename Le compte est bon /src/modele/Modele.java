@@ -50,7 +50,7 @@ public class Modele {
 		return NOMBRE_CIBLE;
 	}
 	
-	public void initialisation() {
+	public Modele() {
 		modeJeu = ModeJeu.INIATIALISER;
 		pseudo = "";
 		listEtapes  = new LinkedList<Etape>();
@@ -99,6 +99,7 @@ public class Modele {
 	}
 	
 	public void proposer() {
+		modeJeu = ModeJeu.SCORE;
 		//TODO
 	}
 }

@@ -11,13 +11,17 @@ import java.io.ObjectOutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 public class GereScore{
 	private List<Score> listeScore=new LinkedList<Score>();
 
-
+	public List<Score> getScores(){
+		return listeScore;
+	}
+	
 	public GereScore() {
 		charge();
 	}
@@ -30,10 +34,12 @@ public class GereScore{
 		}
 	}
 
-	public void affiche() {
+	public List<String> affiche() {
+		List<String> scores = new ArrayList<String>();
 		for(Score score : listeScore) {
-			score.affiche();
+			scores.add(score.affiche());
 		}
+		return scores;
 	}
 
 	public void enregistre() {

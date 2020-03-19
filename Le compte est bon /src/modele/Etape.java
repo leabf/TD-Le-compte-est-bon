@@ -43,6 +43,14 @@ public class Etape {
 	public void setIdOperation(int idOperation) {
 		this.idOperation = idOperation;
 	}
+	public void setIdOperationWithString(String operation) {
+		for(int i = 0 ; i < this.tabOperations.length ; i++) {
+			if(this.tabOperations[i].equals(operation)) {
+				this.idOperation = i;
+				break;
+			}
+		}
+	}
 	public int getResultat() {
 		return resultat;
 	}
@@ -77,13 +85,10 @@ public class Etape {
 		this.id1 = id1;
 		this.id2 = id2;
 		
-		for(int i = 0 ; i < this.tabOperations.length ; i++) {
-			if(this.tabOperations[i].equals(operation)) {
-				this.idOperation = i;
-				break;
-			}
-		}
-		
+		setIdOperationWithString(operation);
+	}
+	
+	public void calculer() {
 		switch (idOperation) {
 		case 1:
 			resultat = id1 + id2;
@@ -108,6 +113,7 @@ public class Etape {
 		default:
 			break;
 		}
+		setNextEtape();
 	}
 	
 	public void setNextEtape() {

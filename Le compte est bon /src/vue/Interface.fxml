@@ -21,9 +21,9 @@
          <items>
             <AnchorPane>
                <children>
-                  <Button fx:id="jouer" layoutX="184.0" layoutY="1.0" mnemonicParsing="false" text="Jouer" />
+                  <Button fx:id="jouer" layoutX="184.0" layoutY="1.0" mnemonicParsing="false" onAction="#boutonJouer" text="Jouer" />
                   <Label fx:id="pseudo" layoutX="74.0" layoutY="6.0" text="Pseudo" />
-                  <Button fx:id="score" layoutX="252.0" layoutY="1.0" mnemonicParsing="false" text="Score" />
+                  <Button fx:id="score" layoutX="252.0" layoutY="1.0" mnemonicParsing="false" onAction="#afficherScore" text="Score" />
                   <Text layoutX="14.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pseudo :" />
                   <Text fx:id="heure" layoutX="400.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Heure" />
                </children>
@@ -35,7 +35,7 @@
       </SplitPane>
    </top>
    <center>
-      <SplitPane BorderPane.alignment="CENTER">
+      <SplitPane fx:id="jeu" BorderPane.alignment="CENTER">
          <items>
             <AnchorPane>
                <children>
@@ -97,10 +97,10 @@
                         </Button>
                      </children>
                   </HBox>
-                  <Button fx:id="annuler" layoutX="151.0" layoutY="114.0" mnemonicParsing="false" text="Annuler" />
-                  <Button fx:id="valider" layoutX="231.0" layoutY="114.0" mnemonicParsing="false" text="Valider" />
+                  <Button layoutX="151.0" layoutY="114.0" mnemonicParsing="false" onAction="#actionBoutons" text="Annuler" />
+                  <Button layoutX="231.0" layoutY="114.0" mnemonicParsing="false" onAction="#actionBoutons" text="Valider" />
                   <TextArea fx:id="historiqueCalculs" layoutX="20.0" layoutY="156.0" prefHeight="200.0" prefWidth="195.0" />
-                  <Button fx:id="supprimer" layoutX="76.0" layoutY="363.0" mnemonicParsing="false" text="Supprimer" />
+                  <Button layoutX="76.0" layoutY="363.0" mnemonicParsing="false" onAction="#actionBoutons" text="Supprimer" />
                   <Text fx:id="calcul" layoutX="37.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calcul demandé" />
                   <Text fx:id="nombreATrouver" layoutX="259.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="264">
                      <font>
@@ -108,7 +108,7 @@
                      </font>
                   </Text>
                   <Text layoutX="240.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre à trouver" />
-                  <Button fx:id="proposer" layoutX="251.0" layoutY="277.0" mnemonicParsing="false" text="Proposer" />
+                  <Button layoutX="251.0" layoutY="277.0" mnemonicParsing="false" onAction="#actionBoutons" text="Proposer" />
                </children>
             </AnchorPane>
          </items>

@@ -12,8 +12,9 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("Interface.fxml"));
-			Scene scene = new Scene(root,400,400);
+			Scene scene = new Scene(root,450,450);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			primaryStage.setTitle("Le compte est bon");
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch(Exception e) {

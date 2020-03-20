@@ -8,7 +8,7 @@ public class Modele {
 	private static final int NOMBRE_CIBLE = (int) (100 + (Math.random() * (999-100)));
 
 	private List<Etape> listEtapes;
-	private int duree;
+	private int dureeRestante;
 	private GereScore gereScore; 
 	private String pseudo; 
 	private ModeJeu modeJeu;
@@ -20,10 +20,10 @@ public class Modele {
 		this.listEtapes = listEtapes;
 	}
 	public int getDuree() {
-		return duree;
+		return dureeRestante;
 	}
 	public void setDuree(int duree) {
-		this.duree = duree;
+		this.dureeRestante = duree;
 	}
 	public GereScore getGereScore() {
 		return gereScore;
@@ -65,7 +65,7 @@ public class Modele {
 	public void preparer(String pseudo) {
 		modeJeu = ModeJeu.PREPARER;
 		this.pseudo = pseudo;
-		duree = 0;
+		dureeRestante = 0;
 	}
 	
 	public void boutonsSelectiones(int plaque1, int plaque2, String operation) {
@@ -76,9 +76,9 @@ public class Modele {
 	public void annuler() {
 		final int LAST_ELEMENT = listEtapes.size() - 1;
 		
-		if((listEtapes.get(LAST_ELEMENT).getId1() != 0) && (listEtapes.get(LAST_ELEMENT).getId2() != 0) &&
-				(listEtapes.get(LAST_ELEMENT).getIdOperation() != 0) && (listEtapes.get(LAST_ELEMENT).getResultat() == 0) &&
-				!(listEtapes.get(LAST_ELEMENT).isCalculOK()) && modeJeu == ModeJeu.JOUER) {
+		if((listEtapes.get(LAST_ELEMENT).getId1() != null) && (listEtapes.get(LAST_ELEMENT).getId2() != null) &&
+				(listEtapes.get(LAST_ELEMENT).getIdOperation() != null) && !(listEtapes.get(LAST_ELEMENT).isCalculOK()) && 
+				modeJeu == ModeJeu.JOUER) {
 			listEtapes.remove(listEtapes.size() - 1);
 		}
 	}
@@ -86,9 +86,9 @@ public class Modele {
 	public void valider() {
 		final int LAST_ELEMENT = listEtapes.size() - 1;
 
-		if((listEtapes.get(LAST_ELEMENT).getId1() != 0) && (listEtapes.get(LAST_ELEMENT).getId2() != 0) &&
-				(listEtapes.get(LAST_ELEMENT).getIdOperation() != 0)) {
-			listEtapes.get(LAST_ELEMENT).calculer();
+		if((listEtapes.get(LAST_ELEMENT).getId1() != null) && (listEtapes.get(LAST_ELEMENT).getId2() != null) &&
+				(listEtapes.get(LAST_ELEMENT).getIdOperation() != null)) {
+			listEtapes.get(LAST_ELEMENT).validerCalcul();
 		}
 	}
 	
@@ -100,6 +100,9 @@ public class Modele {
 	
 	public void proposer() {
 		modeJeu = ModeJeu.SCORE;
-		//TODO
+		int scoreObtenu = NOMBRE_CIBLE - listEtapes.get(listEtapes.size() - 1).getTabPlaques().get(listEtapes.get(listEtapes.size() - 1).getId1());
+		scoreObtenu = scoreObtenu > 0 ? scoreObtenu : -scoreObtenu;
+		gereScore.ajouteScore(pseudo, scoreObtenu, DUREE_MAX - dureeRestante);
+		gereScore.enregistre();
 	}
 }

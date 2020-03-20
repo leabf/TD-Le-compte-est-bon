@@ -9,10 +9,10 @@ import java.util.Random;
 public class Etape {
 
 	private List<Integer> tabPlaques = new LinkedList<Integer>();
-	private String tabOperations[] = {"+", "-", "x", "/"};
-	private int id1;
-	private int id2;
-	private int idOperation;
+	private String tabOperations[] = {"+", "-", "X", "/"};
+	private Integer id1;
+	private Integer id2;
+	private Integer idOperation;
 	private int resultat;
 	private boolean calculOK = false;
 	
@@ -25,19 +25,19 @@ public class Etape {
 	public String[] getTabOperations() {
 		return tabOperations;
 	}
-	public int getId1() {
+	public Integer getId1() {
 		return id1;
 	}
 	public void setId1(int id1) {
 		this.id1 = id1;
 	}
-	public int getId2() {
+	public Integer getId2() {
 		return id2;
 	}
 	public void setId2(int id2) {
 		this.id2 = id2;
 	}
-	public int getIdOperation() {
+	public Integer getIdOperation() {
 		return idOperation;
 	}
 	public void setIdOperation(int idOperation) {
@@ -86,27 +86,44 @@ public class Etape {
 		this.id2 = id2;
 		
 		setIdOperationWithString(operation);
-	}
-	
-	public void calculer() {
+		
 		switch (idOperation) {
-		case 1:
+		case 0:
 			resultat = tabPlaques.get(id1) + tabPlaques.get(id2);
-			calculOK = true;
+			break;
+			
+		case 1:
+			resultat = tabPlaques.get(id1) - tabPlaques.get(id2);
 			break;
 			
 		case 2:
-			resultat = tabPlaques.get(id1) - tabPlaques.get(id2);
-			calculOK = this.resultat > 0 ? true : false;
+			resultat = tabPlaques.get(id1) * tabPlaques.get(id2);
 			break;
 			
 		case 3:
-			resultat = tabPlaques.get(id1) * tabPlaques.get(id2);
+			resultat = tabPlaques.get(id1) / tabPlaques.get(id2);
+			break;
+
+		default:
+			break;
+		}
+	}
+	
+	public void validerCalcul() {
+		switch (idOperation) {
+		case 0:
 			calculOK = true;
 			break;
 			
-		case 4:
-			resultat = tabPlaques.get(id1) / tabPlaques.get(id2);
+		case 1:
+			calculOK = this.resultat > 0 ? true : false;
+			break;
+			
+		case 2:
+			calculOK = true;
+			break;
+			
+		case 3:
 			calculOK = tabPlaques.get(id1) % tabPlaques.get(id2) == 0 ? true : false;
 			break;
 
@@ -119,8 +136,8 @@ public class Etape {
 	public void setNextEtape() {
 		//Calcule les nouvelles plaques et réinitialise les autres attributs
 		if(calculOK) {
-			tabPlaques.remove(id1);
 			tabPlaques.set(id2, resultat);
+			tabPlaques.remove(id1.intValue());
 			id1 = (Integer) null;
 			id2 = (Integer) null;
 			idOperation = (Integer) null;

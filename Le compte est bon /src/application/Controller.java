@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Optional;
 
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
@@ -17,6 +17,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.TextArea;
@@ -123,6 +124,28 @@ public class Controller {
 		}
 	}
 	
+	private void voulezVousRejouer() {
+		Alert rejouer = new Alert(AlertType.CONFIRMATION);
+		rejouer.setTitle("Confirmation");
+		rejouer.setHeaderText(null);
+		rejouer.setContentText("Voulez-vous refaire une partie ?");
+		
+		Optional<ButtonType> answer = rejouer.showAndWait();
+		if(answer.get() == ButtonType.OK) {
+			modele = null;
+			modele = new Modele();
+			pseudo.setText("");
+			initialize();
+			clearAttributes();
+			calculHistory.clear();
+			historiqueCalculs.setText("");
+			calcul.setText("");
+		} else {
+			System.exit(0);
+		}
+
+	}
+	
 	@FXML
 	public void actionBoutons(ActionEvent e) {
 		String action = ((Button)e.getSource()).getText();
@@ -160,6 +183,7 @@ public class Controller {
 			modele.setDuree(dureeRestante);
 			modele.proposer();
 			calculeEnregistreEtAfficheScores();
+			voulezVousRejouer();
 			break;
 
 		default:

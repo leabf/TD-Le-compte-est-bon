@@ -19,12 +19,6 @@ public class Etape {
 	public List<Integer> getTabPlaques() {
 		return tabPlaques;
 	}
-	public void setTabPlaques(List<Integer> tabPlaques) {
-		this.tabPlaques = tabPlaques;
-	}
-	public String[] getTabOperations() {
-		return tabOperations;
-	}
 	public Integer getId1() {
 		return id1;
 	}
@@ -39,9 +33,6 @@ public class Etape {
 	}
 	public Integer getIdOperation() {
 		return idOperation;
-	}
-	public void setIdOperation(int idOperation) {
-		this.idOperation = idOperation;
 	}
 	public void setIdOperationWithString(String operation) {
 		for(int i = 0 ; i < this.tabOperations.length ; i++) {
